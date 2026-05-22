@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Mind Map - Premium UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🧠 Mind Map Creator</h1>
+                <p>Build and organize your ideas visually</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="saveBtn">💾 Save</button>
+                <button class="btn btn-secondary" id="downloadBtn">📥 Download</button>
+                <button class="btn btn-primary" id="resetBtn">↻ Reset</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <button class="btn btn-sm btn-accent" id="addRootBtn">+ Add Central Topic</button>
+                    <button class="btn btn-sm btn-accent" id="addBranchBtn">+ Add Branch</button>
+                    <button class="btn btn-sm btn-danger" id="deleteBranchBtn">- Delete Selected</button>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Branches Count</h3>
+                    <div class="stat-box">
+                        <span class="stat-label">Total Items:</span>
+                        <span class="stat-value" id="itemCount">0</span>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Legend</h3>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></span>
+                        <span>Central Topic</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></span>
+                        <span>Main Branch</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></span>
+                        <span>Sub-branch</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Canvas Area -->
+            <div class="canvas-wrapper">
+                <div class="canvas" id="canvas"></div>
+            </div>
+        </main>
+
+        <!-- Modal for Editing -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Edit Node</h2>
+                    <button class="close-btn" id="closeModalBtn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <label>Node Title</label>
+                    <input type="text" id="nodeTitle" class="input" placeholder="Enter node title">
+                    
+                    <label>Description (Optional)</label>
+                    <textarea id="nodeDescription" class="input textarea" placeholder="Add more details..."></textarea>
+                    
+                    <label>Color</label>
+                    <div class="color-picker">
+                        <input type="color" id="nodeColor" value="#667eea">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button class="btn btn-primary" id="saveNodeBtn">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
